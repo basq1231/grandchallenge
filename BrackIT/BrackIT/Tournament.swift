@@ -13,9 +13,12 @@ import CoreData
 class Tournament: NSManagedObject {
 
     @NSManaged var name: String
+    @NSManaged var game: String
     @NSManaged var createdDate: NSDate
     @NSManaged var teamCount: NSNumber
     @NSManaged var teamPlayerCount: NSNumber
     @NSManaged var autoCreateTeams: NSNumber
+    
 
 }
+

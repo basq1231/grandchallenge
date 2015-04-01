@@ -15,6 +15,11 @@
 		4C4870C71AAD11C500B63AF4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4870C51AAD11C500B63AF4 /* LaunchScreen.xib */; };
 		4C4870D31AAD11C500B63AF4 /* BrackITTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4870D21AAD11C500B63AF4 /* BrackITTests.swift */; };
 		4C4870DD1AAD192500B63AF4 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4870DC1AAD192500B63AF4 /* Tournament.swift */; };
+		4C5DD8AD1ACB80CC00361888 /* NewTournamentViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD8AC1ACB80CC00361888 /* NewTournamentViewController1.swift */; };
+		4C5DD8AF1ACB811000361888 /* NewTournamentViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD8AE1ACB811000361888 /* NewTournamentViewController2.swift */; };
+		4C5DD8B31ACB818800361888 /* NewTournamentViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD8B21ACB818800361888 /* NewTournamentViewController4.swift */; };
+		4C5DD8B51ACB855E00361888 /* NewTournamentViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD8B41ACB855E00361888 /* NewTournamentViewController3.swift */; };
+		4CC021961ACB4C6D0049F894 /* NewTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC021951ACB4C6D0049F894 /* NewTournamentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,11 @@
 		4C4870D11AAD11C500B63AF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C4870D21AAD11C500B63AF4 /* BrackITTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrackITTests.swift; sourceTree = "<group>"; };
 		4C4870DC1AAD192500B63AF4 /* Tournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		4C5DD8AC1ACB80CC00361888 /* NewTournamentViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTournamentViewController1.swift; sourceTree = "<group>"; };
+		4C5DD8AE1ACB811000361888 /* NewTournamentViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTournamentViewController2.swift; sourceTree = "<group>"; };
+		4C5DD8B21ACB818800361888 /* NewTournamentViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewTournamentViewController4.swift; path = ../NewTournamentViewController4.swift; sourceTree = "<group>"; };
+		4C5DD8B41ACB855E00361888 /* NewTournamentViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTournamentViewController3.swift; sourceTree = "<group>"; };
+		4CC021951ACB4C6D0049F894 /* NewTournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTournamentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,12 +92,17 @@
 			isa = PBXGroup;
 			children = (
 				4C4870B91AAD11C500B63AF4 /* AppDelegate.swift */,
+				4CC021951ACB4C6D0049F894 /* NewTournamentViewController.swift */,
+				4C5DD8AC1ACB80CC00361888 /* NewTournamentViewController1.swift */,
+				4C5DD8AE1ACB811000361888 /* NewTournamentViewController2.swift */,
+				4C5DD8B41ACB855E00361888 /* NewTournamentViewController3.swift */,
+				4C5DD8B21ACB818800361888 /* NewTournamentViewController4.swift */,
 				4C4870BE1AAD11C500B63AF4 /* ViewController.swift */,
-				4C4870C01AAD11C500B63AF4 /* Main.storyboard */,
 				4C4870C31AAD11C500B63AF4 /* Images.xcassets */,
-				4C4870C51AAD11C500B63AF4 /* LaunchScreen.xib */,
 				4C4870BB1AAD11C500B63AF4 /* BrackIT.xcdatamodeld */,
 				4C4870DE1AAD19BD00B63AF4 /* DataModel */,
+				4C4870C51AAD11C500B63AF4 /* LaunchScreen.xib */,
+				4C4870C01AAD11C500B63AF4 /* Main.storyboard */,
 				4C4870B71AAD11C500B63AF4 /* Supporting Files */,
 			);
 			path = BrackIT;
@@ -227,8 +242,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C4870DD1AAD192500B63AF4 /* Tournament.swift in Sources */,
+				4C5DD8AF1ACB811000361888 /* NewTournamentViewController2.swift in Sources */,
+				4CC021961ACB4C6D0049F894 /* NewTournamentViewController.swift in Sources */,
+				4C5DD8B31ACB818800361888 /* NewTournamentViewController4.swift in Sources */,
 				4C4870BF1AAD11C500B63AF4 /* ViewController.swift in Sources */,
 				4C4870BD1AAD11C500B63AF4 /* BrackIT.xcdatamodeld in Sources */,
+				4C5DD8AD1ACB80CC00361888 /* NewTournamentViewController1.swift in Sources */,
+				4C5DD8B51ACB855E00361888 /* NewTournamentViewController3.swift in Sources */,
 				4C4870BA1AAD11C500B63AF4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +441,7 @@
 				4C4870D81AAD11C500B63AF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C4870D91AAD11C500B63AF4 /* Build configuration list for PBXNativeTarget "BrackITTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +450,7 @@
 				4C4870DB1AAD11C500B63AF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
