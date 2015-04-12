@@ -1,310 +1,471 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2uL-ko-1hR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7528.3" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UuP-rI-Fhj">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7518.3"/>
     </dependencies>
     <scenes>
-        <!--Title-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Navigation Controller-->
+        <scene sceneID="52r-KX-g1a">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="UuP-rI-Fhj" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9qi-Z1-tMH"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ApT-gu-ao5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hQf-mo-uXE" kind="relationship" relationship="rootViewController" id="teS-3b-tC5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6F-yt-Vpu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="621" y="452"/>
+        </scene>
+        <!--Brack It View Controller-->
+        <scene sceneID="DHc-YP-fhq">
+            <objects>
+                <viewController id="hQf-mo-uXE" customClass="BrackItViewController" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="S8y-W7-5eY"/>
+                        <viewControllerLayoutGuide type="bottom" id="NP6-mN-3Xc"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="pnS-ah-V3i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEp-Sj-hLP">
-                                <rect key="frame" x="16" y="215" width="288" height="91"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gs3-Xg-at4">
+                                <rect key="frame" x="57" y="133" width="207" height="49"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="New Tournament">
                                     <color key="titleColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZOE-zc-o0Q" kind="show" id="cmi-nB-6xo"/>
+                                    <segue destination="Sud-fS-v61" kind="show" id="HXg-90-pbR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vN-Nb-Co5">
-                                <rect key="frame" x="16" y="336" width="288" height="91"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfd-Mx-2DF">
+                                <rect key="frame" x="57" y="302" width="207" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Help">
+                                    <color key="titleColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tournament Ct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgm-T1-XMg">
+                                <rect key="frame" x="25" y="455" width="270" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version 0.0000001" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itU-9L-8L9">
+                                <rect key="frame" x="89" y="79" width="142" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tournaments Created:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esI-VE-Kgo">
+                                <rect key="frame" x="75" y="426" width="170" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHH-dB-wrm">
+                                <rect key="frame" x="57" y="217" width="207" height="49"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Open Tournament">
                                     <color key="titleColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rze-W5-22m" kind="show" id="d3W-cO-IUk"/>
+                                    <segue destination="CAA-tq-pfj" kind="show" id="sGo-ch-vMf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXB-6I-cLg">
-                                <rect key="frame" x="16" y="455" width="288" height="91"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="23"/>
-                                <state key="normal" title="Help">
-                                    <color key="titleColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </subviews>
+                        <color key="backgroundColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MOs-4Y-PNf"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="labelTournamentCount" destination="Cgm-T1-XMg" id="WXX-FJ-yqk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4yV-8z-pPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1011" y="452"/>
+        </scene>
+        <!--New Tournament View Controller-->
+        <scene sceneID="Vnu-ry-UNK">
+            <objects>
+                <navigationController id="Sud-fS-v61" customClass="NewTournamentViewController" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fR3-DG-fMc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uTU-qR-2fh" kind="show" identifier="goToNewTournamentScreenOne" id="XUp-6X-7Fi"/>
+                        <segue destination="uTU-qR-2fh" kind="relationship" relationship="rootViewController" id="vcy-FH-RC8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TvU-zi-jbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1424" y="452"/>
+        </scene>
+        <!--New Tournament View Controller1-->
+        <scene sceneID="gAr-2W-Wyj">
+            <objects>
+                <viewController id="uTU-qR-2fh" customClass="NewTournamentViewController1" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="73F-FP-Lsy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ldr-Af-yfJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cjz-lX-WM5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OG3-q8-08O">
+                                <rect key="frame" x="97" y="412" width="30" height="30"/>
+                                <state key="normal" title="1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPl-9K-7xi">
-                                <rect key="frame" x="16" y="85" width="288" height="91"/>
-                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EYz-LW-1ZN">
+                                <rect key="frame" x="52" y="269" width="216" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tournament Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67j-FP-qds">
+                                <rect key="frame" x="25" y="180" width="270" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.24313725490196078" green="0.4823529411764706" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="boM-2Q-ber"/>
+                    <navigationItem key="navigationItem" id="ClM-g1-xBW">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="4kk-QR-Lrj">
+                            <connections>
+                                <segue destination="f6m-fn-hRo" kind="unwind" unwindAction="unwindToMainMenuByCancel:" id="Fo5-Or-8ti"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="xgM-cq-mqT">
+                            <connections>
+                                <segue destination="274-ju-cK3" kind="show" identifier="goToNewTournamentScreenTwo" id="HcF-f5-YRg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textFieldTournamentName" destination="EYz-LW-1ZN" id="LJi-Rv-a9w"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1DT-xy-ZoI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="f6m-fn-hRo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1235" y="498"/>
+            <point key="canvasLocation" x="1828" y="452"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="ZDn-Gx-WUr">
+        <!--Root View Controller-->
+        <scene sceneID="3Aw-T1-BmZ">
             <objects>
-                <tableViewController id="rze-W5-22m" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Zew-06-mcO">
+                <tableViewController id="abH-1f-akX" customClass="OpenTournamentTableViewController" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="i3b-2u-wN3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hBh-o7-iQP">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TournamentCell" textLabel="QVe-0m-56n" detailTextLabel="RlH-Eu-Vx1" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="KlR-1m-KZ6">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hBh-o7-iQP" id="czi-tI-8Ee">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KlR-1m-KZ6" id="sTx-Je-LwM">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QVe-0m-56n">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RlH-Eu-Vx1">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="6sA-1h-c4G" kind="show" id="7ZK-0l-RQb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="rze-W5-22m" id="QIl-K2-9dA"/>
-                            <outlet property="delegate" destination="rze-W5-22m" id="qf5-Qg-TvJ"/>
+                            <outlet property="dataSource" destination="abH-1f-akX" id="v76-Qs-0P1"/>
+                            <outlet property="delegate" destination="abH-1f-akX" id="fRU-nH-mrb"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="ZsH-wc-c3Q"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tavleView" destination="i3b-2u-wN3" id="3WC-gP-N5D"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vnn-qw-YZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oGD-AO-JwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610" y="1183"/>
+            <point key="canvasLocation" x="1408" y="1150"/>
         </scene>
-        <!--New Tournament View Controller1-->
-        <scene sceneID="Sie-N6-vUH">
+        <!--View Controller-->
+        <scene sceneID="dbM-23-fqF">
             <objects>
-                <viewController id="ZOE-zc-o0Q" customClass="NewTournamentViewController1" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6sA-1h-c4G" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gqg-FK-ZI7"/>
-                        <viewControllerLayoutGuide type="bottom" id="sTP-VK-dgO"/>
+                        <viewControllerLayoutGuide type="top" id="pCa-g8-33u"/>
+                        <viewControllerLayoutGuide type="bottom" id="tIe-3x-AMf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="POg-BT-0qL">
+                    <view key="view" contentMode="scaleToFill" id="MYt-LJ-Osx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGI-4u-gUu">
-                                <rect key="frame" x="16" y="494" width="288" height="54"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z34-He-Egz">
+                                <rect key="frame" x="57" y="173" width="207" height="49"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="23"/>
-                                <state key="normal" title="Continue">
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Tournament Settings">
                                     <color key="titleColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="continuePressed1:" destination="ZOE-zc-o0Q" eventType="touchUpInside" id="Xzd-NW-lWC"/>
-                                    <segue destination="IWe-eH-XoS" kind="show" id="UMF-Or-Kxb"/>
-                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jjb-LL-PMF">
-                                <rect key="frame" x="30" y="214" width="262" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tournament Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxE-Wa-PxY">
-                                <rect key="frame" x="30" y="185" width="141" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkG-x1-sxw">
+                                <rect key="frame" x="57" y="342" width="207" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Bracket">
+                                    <color key="titleColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIz-mG-LV9">
+                                <rect key="frame" x="57" y="257" width="207" height="49"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Teams">
+                                    <color key="titleColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="textFieldTournamentName" destination="Jjb-LL-PMF" id="nio-S3-MHJ"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zp9-f5-FQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TyP-67-XIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1616" y="498"/>
-        </scene>
-        <!--New Tournament View Controller2-->
-        <scene sceneID="yXN-8V-Xfh">
-            <objects>
-                <viewController id="IWe-eH-XoS" customClass="NewTournamentViewController2" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oVj-oL-96m"/>
-                        <viewControllerLayoutGuide type="bottom" id="RDx-z3-iAx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KQ7-me-x4U">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGR-VR-O5g">
-                                <rect key="frame" x="16" y="499" width="288" height="54"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="23"/>
-                                <state key="normal" title="Continue">
-                                    <color key="titleColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="continuePressed2:" destination="IWe-eH-XoS" eventType="touchUpInside" id="Pnd-kE-7yD"/>
-                                    <segue destination="gtq-dE-ui6" kind="show" id="Y9A-6M-QlZ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="da5-W1-LGJ">
-                                <rect key="frame" x="16" y="190" width="99" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFA-Mt-h4e">
-                                <rect key="frame" x="0.0" y="232" width="320" height="162"/>
-                            </pickerView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="pickerGame" destination="xFA-Mt-h4e" id="2Vp-Yu-EpQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PD7-fY-fp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1980" y="498"/>
+            <point key="canvasLocation" x="1788" y="1150"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="q3V-bv-ncE">
+        <scene sceneID="cpS-aD-Ai0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2uL-ko-1hR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="syD-ID-Qno">
+                <navigationController id="CAA-tq-pfj" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jPO-Zy-sV6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="HTf-xJ-WcT"/>
+                        <segue destination="abH-1f-akX" kind="relationship" relationship="rootViewController" id="pvc-br-pye"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Frh-bd-HbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fb8-EZ-ijM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737" y="498"/>
+            <point key="canvasLocation" x="964" y="1150"/>
+        </scene>
+        <!--New Tournament View Controller2-->
+        <scene sceneID="1RE-Fc-1uI">
+            <objects>
+                <viewController id="274-ju-cK3" customClass="NewTournamentViewController2" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uGy-1Q-27L"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Ag-KI-DtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RlP-ir-GXY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCF-Bw-HYn">
+                                <rect key="frame" x="58" y="438" width="30" height="30"/>
+                                <state key="normal" title="2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7l-4J-OwH">
+                                <rect key="frame" x="78" y="183" width="164" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McN-LI-c2R">
+                                <rect key="frame" x="0.0" y="235" width="320" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="274-ju-cK3" id="eDu-UV-jur"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="U7l-4J-OwH" firstAttribute="top" secondItem="McN-LI-c2R" secondAttribute="bottom" constant="-214" id="AFQ-aM-xN9"/>
+                            <constraint firstItem="McN-LI-c2R" firstAttribute="top" secondItem="RlP-ir-GXY" secondAttribute="top" constant="235" id="Nkd-0P-UoF"/>
+                            <constraint firstItem="McN-LI-c2R" firstAttribute="centerX" secondItem="U7l-4J-OwH" secondAttribute="centerX" id="OwL-1R-CfQ"/>
+                            <constraint firstItem="McN-LI-c2R" firstAttribute="leading" secondItem="RlP-ir-GXY" secondAttribute="leading" id="gBe-m4-bFQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JH5-6p-R7h">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="DDW-Xv-lVC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="wcY-SB-v3R">
+                            <connections>
+                                <segue destination="rDV-NP-PNy" kind="show" identifier="goToNewTournamentScreenThree" id="xRe-E6-fGb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="pickerGame" destination="McN-LI-c2R" id="OwZ-xd-z7r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRz-n8-wG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2217" y="452"/>
         </scene>
         <!--New Tournament View Controller3-->
-        <scene sceneID="g5d-oF-gmk">
+        <scene sceneID="dcG-0k-N1S">
             <objects>
-                <viewController id="gtq-dE-ui6" customClass="NewTournamentViewController3" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rDV-NP-PNy" customClass="NewTournamentViewController3" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vLq-za-hHS"/>
-                        <viewControllerLayoutGuide type="bottom" id="kWc-PP-gx2"/>
+                        <viewControllerLayoutGuide type="top" id="re8-0B-uVe"/>
+                        <viewControllerLayoutGuide type="bottom" id="5eX-GK-fwQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RFx-Ps-0e1">
+                    <view key="view" contentMode="scaleToFill" id="tvA-f9-M1F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3t-Mj-csS">
-                                <rect key="frame" x="16" y="499" width="288" height="54"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="23"/>
-                                <state key="normal" title="Continue">
-                                    <color key="titleColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prr-Vm-KvD">
+                                <rect key="frame" x="42" y="446" width="30" height="30"/>
+                                <state key="normal" title="3">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="continuePressed3:" destination="gtq-dE-ui6" eventType="touchUpInside" id="5GM-vR-27K"/>
-                                    <segue destination="AeW-LW-8Dr" kind="show" id="f6H-Jm-Z9T"/>
-                                </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q9z-yr-bwy">
-                                <rect key="frame" x="0.0" y="232" width="320" height="162"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select number of teams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pND-8l-QLb">
-                                <rect key="frame" x="16" y="197" width="183" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Teams" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MV-7v-9Ng">
+                                <rect key="frame" x="25" y="185" width="270" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C5W-9W-JJu">
+                                <rect key="frame" x="0.0" y="237" width="320" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rDV-NP-PNy" id="L7m-Ld-cPf"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Snh-3p-DcC">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="MaT-KJ-VRG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="6dz-lU-xfF">
+                            <connections>
+                                <segue destination="CS3-3U-Uau" kind="show" identifier="goToNewTournamentScreenFour" id="dTC-5j-dfl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="pickerTeamCount" destination="Q9z-yr-bwy" id="Udp-8n-Vhf"/>
+                        <outlet property="pickerTeamCount" destination="C5W-9W-JJu" id="RXR-Ue-6Ho"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Exe-5V-0oB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bf1-ND-lTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2328" y="498"/>
+            <point key="canvasLocation" x="2587" y="452"/>
         </scene>
         <!--New Tournament View Controller4-->
-        <scene sceneID="RM8-88-LzD">
+        <scene sceneID="bt0-OJ-wCk">
             <objects>
-                <viewController id="AeW-LW-8Dr" customClass="NewTournamentViewController4" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CS3-3U-Uau" customClass="NewTournamentViewController4" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SlE-qp-dTp"/>
-                        <viewControllerLayoutGuide type="bottom" id="hIb-Q5-GAj"/>
+                        <viewControllerLayoutGuide type="top" id="3Jj-vO-gv6"/>
+                        <viewControllerLayoutGuide type="bottom" id="HY7-Gr-zg5"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lGB-3A-IkP">
+                    <view key="view" contentMode="scaleToFill" id="dUk-kk-dHf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRm-Fr-ZYb">
-                                <rect key="frame" x="16" y="499" width="288" height="54"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="23"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPH-hG-GY5">
+                                <rect key="frame" x="46" y="487" width="30" height="30"/>
+                                <state key="normal" title="4">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="savePressed:" destination="AeW-LW-8Dr" eventType="touchUpInside" id="hjQ-P9-ISD"/>
-                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Players per team" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl6-KS-Kf6">
-                                <rect key="frame" x="16" y="131" width="130" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Players per Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Od-UJ-dIy">
+                                <rect key="frame" x="7" y="193" width="270" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Auto Select Teams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFw-ZO-vdE">
-                                <rect key="frame" x="16" y="311" width="143" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Auto generate teams" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lk-MZ-GN7">
+                                <rect key="frame" x="25" y="363" width="270" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZSn-E9-RX3">
-                                <rect key="frame" x="110" y="372" width="51" height="31"/>
-                            </switch>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3de-eJ-maJ">
-                                <rect key="frame" x="-26" y="146" width="320" height="162"/>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wgl-Vq-Jtj">
+                                <rect key="frame" x="19" y="225" width="247" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CS3-3U-Uau" id="hGX-eC-6W6"/>
+                                </connections>
                             </pickerView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2g1-ml-PC0">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                            </navigationBar>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQa-qj-Hgx">
+                                <rect key="frame" x="136" y="415" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWB-gu-tR0">
+                                <rect key="frame" x="56" y="420" width="23" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfa-9S-shI">
+                                <rect key="frame" x="235" y="420" width="27" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="uVn-b5-tkg">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="6RL-5J-FzQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KEj-Xa-VI5">
+                            <connections>
+                                <action selector="savePressed:" destination="CS3-3U-Uau" id="Iqf-YZ-1Ql"/>
+                                <segue destination="fLy-1b-KHT" kind="unwind" identifier="saveAndReturnToMainMenu" unwindAction="unwindToMainMenu:" id="GX4-kl-eKL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="pickerPlayerCount" destination="3de-eJ-maJ" id="nRb-NR-64Y"/>
-                        <outlet property="switchAutoGenerateTeams" destination="ZSn-E9-RX3" id="0OK-rI-vsf"/>
+                        <outlet property="buttonSave" destination="KEj-Xa-VI5" id="gJA-fv-kvK"/>
+                        <outlet property="pickerPlayerCount" destination="Wgl-Vq-Jtj" id="k2d-IQ-qyT"/>
+                        <outlet property="switchAutoGenerateTeams" destination="fQa-qj-Hgx" id="vkU-gb-Q3a"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dPo-Jw-diq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BnS-S0-ovr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fLy-1b-KHT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2683" y="498"/>
+            <point key="canvasLocation" x="2947" y="452"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XUp-6X-7Fi"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

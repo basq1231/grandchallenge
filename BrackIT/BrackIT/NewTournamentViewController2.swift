@@ -7,21 +7,57 @@
 //
 
 import UIKit
+import CoreData
 
-class NewTournamentViewController2: UIViewController {
+class NewTournamentViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var pickerGame: UIPickerView!
-    var inProgressTournament2: Tournament!
+
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    var gameOptions: [String] = ["Select Game","Baggo","Horeseshoes","Darts","Other"]
+    var selectedGame: String!
+    var newTournament: Tournament!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("I'm in view 2")
-        println(inProgressTournament2.name)
+        println("Current tournament status")
+        NSLog(newTournament.description)
+        self.title = newTournament.name
+        
+        pickerGame.delegate = self
+        pickerGame.dataSource = self
+        
+        
+        self.navigationItem.rightBarButtonItem?.enabled = false
+        
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func continuePressed2(sender: AnyObject) {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return gameOptions[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return gameOptions.count
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        println(gameOptions[row])
+        selectedGame = gameOptions[row]
+        if (row == 0)
+        {
+            self.navigationItem.rightBarButtonItem?.enabled = false
+        }
+        else{
+            self.navigationItem.rightBarButtonItem?.enabled = true
+        }
+        
         
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -30,14 +66,12 @@ class NewTournamentViewController2: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        newTournament.game = selectedGame
+        
+        let destination = segue.destinationViewController as! NewTournamentViewController3
+        destination.newTournament = self.newTournament
     }
-    */
 
 }

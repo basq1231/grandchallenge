@@ -7,33 +7,108 @@
 //
 
 import UIKit
+import CoreData
 
-class NewTournamentViewController4: UIViewController {
+class NewTournamentViewController4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var buttonSave: UIBarButtonItem!
     @IBOutlet weak var pickerPlayerCount: UIPickerView!
     @IBOutlet weak var switchAutoGenerateTeams: UISwitch!
+
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    var newTournament: Tournament!
+    
+    var playerCountOptions: [Int] = [1,2,3,4,5,6,7,8]
+    var selectedPlayerCount: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("I'm in view 4")
+        println("Current tournament status")
+        NSLog(newTournament.description)
 
-        // Do any additional setup after loading the view.
+
+        self.title = newTournament.name
+        
+        pickerPlayerCount.delegate = self
+        pickerPlayerCount.dataSource = self
+    }
+   
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
     }
 
     @IBAction func savePressed(sender: AnyObject) {
+        println("Save pressed")
+        newTournament.teamPlayerCount = selectedPlayerCount
+        newTournament.autoCreateTeams = true
+        newTournament.createdDate = NSDate()
+        
+        println("Save was pressed. Attempting to save this tournament:")
+        NSLog(newTournament.description)
+        //save()
+        
+        
     }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        if (row == 0){
+            return "Select Player Count"
+        }
+        else{
+            return playerCountOptions[row].description
+        }
+
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return playerCountOptions.count
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        println(playerCountOptions[row])
+        selectedPlayerCount = playerCountOptions[row]
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
+    func save() {
+        println("Saving tournament")
+        var error : NSError?
+        if(managedObjectContext!.save(&error)) {
+            println(error?.localizedDescription)
+        }
+    }
+    
+    
+    
+    
+
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        //change this to make sure it due to save
+        println("Save pressed")
+        newTournament.teamPlayerCount = selectedPlayerCount
+        newTournament.autoCreateTeams = true
+        newTournament.createdDate = NSDate()
+        
+        println("Save was pressed. Attempting to save this tournament:")
+        NSLog(newTournament.description)
+        save()
+        
+        
     }
-    */
+
 
 }
