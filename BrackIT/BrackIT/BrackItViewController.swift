@@ -22,6 +22,8 @@ class BrackItViewController: UIViewController {
         println(managedObjectContext!.executeFetchRequest(fetchRequest, error: nil)?.count.description)
         tournamentsSaved = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil)?.count.description
         labelTournamentCount.text = tournamentsSaved
+        
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -32,7 +34,10 @@ class BrackItViewController: UIViewController {
         tournamentsSaved = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil)?.count.description
         labelTournamentCount.text = tournamentsSaved
         
+        //self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

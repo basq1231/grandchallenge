@@ -28,6 +28,8 @@ class NewTournamentViewController1: UIViewController, UITextFieldDelegate {
 
         textFieldTournamentName.delegate = self
         
+        
+        //self.navigationController?.navigationBarHidden = false
         self.navigationItem.rightBarButtonItem?.enabled = false
         
         

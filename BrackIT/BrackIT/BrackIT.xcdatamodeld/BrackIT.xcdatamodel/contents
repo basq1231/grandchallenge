@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7541.6" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Player" syncable="YES"/>
+    <entity name="Player" representedClassName="Player" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="playersTeam" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="players" inverseEntity="Team" syncable="YES"/>
+        <relationship name="tournament" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tournament" inverseName="tournamentPlayers" inverseEntity="Tournament" syncable="YES"/>
+    </entity>
+    <entity name="Team" representedClassName="Team" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="playersTeam" inverseEntity="Player" syncable="YES"/>
+        <relationship name="tournament" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tournament" inverseName="teams" inverseEntity="Tournament" syncable="YES"/>
+    </entity>
     <entity name="Tournament" representedClassName="Tournament" syncable="YES">
         <attribute name="autoCreateTeams" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="createdDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -8,9 +18,12 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teamCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="teamPlayerCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="teams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="tournament" inverseEntity="Team" syncable="YES"/>
+        <relationship name="tournamentPlayers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="tournament" inverseEntity="Player" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Tournament" positionX="-54" positionY="-9" width="128" height="135"/>
-        <element name="Player" positionX="-54" positionY="36" width="128" height="45"/>
+        <element name="Player" positionX="-54" positionY="36" width="128" height="103"/>
+        <element name="Team" positionX="-54" positionY="36" width="128" height="90"/>
+        <element name="Tournament" positionX="-54" positionY="-9" width="128" height="165"/>
     </elements>
 </model>

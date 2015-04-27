@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>EB57522D-572D-4CC9-8162-845C9E264A3B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>BrackIT</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>26283841528B26E8F5EDB5E75F9AD09DE68D130E</key>
 		<string>https://github.com/basq1231/grandchallenge.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BrackIT/BrackIT.xcodeproj</string>
+	<string>BrackIT/BrackIT.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>26283841528B26E8F5EDB5E75F9AD09DE68D130E</key>

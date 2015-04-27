@@ -9,17 +9,32 @@
 import UIKit
 import CoreData
 
-class OpenTournamentTableViewController: UITableViewController, UITableViewDataSource {
+class OpenTournamentTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet var tavleView: UITableView!
     
     var tournaments : Array <AnyObject> = []
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-
+    var fetchedResultsController: NSFetchedResultsController = NSFetchedResultsController()
+    
+    func getFetchedResultsController() ->NSFetchedResultsController {
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: tournamentFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchedResultsController
+    }
+    
+    func tournamentFetchRequest() ->NSFetchRequest {
+        let request = NSFetchRequest(entityName: "Tournament")
+        let sortDescriptor = NSSortDescriptor(key: "createdDate", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
+        return request
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        fetchedResultsController = getFetchedResultsController()
+        fetchedResultsController.delegate = self
+        fetchedResultsController.performFetch(nil)
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -27,43 +42,39 @@ class OpenTournamentTableViewController: UITableViewController, UITableViewDataS
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        let fetchRequest = NSFetchRequest(entityName: "Tournament")
-        tournaments = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil)!
-        tavleView.reloadData()
-        
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    //Called when the Fetched Results Controller changes
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
-        return 1
+        let sectionCount = fetchedResultsController.sections?.count
+        return sectionCount!
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return tournaments.count    }
+        let sectionRowCount = fetchedResultsController.sections?[section].numberOfObjects
+        return sectionRowCount!
+    }
 
     
     //Populate cell in table
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TournamentCell") as! UITableViewCell
 
-        var cellData: Tournament = tournaments[indexPath.row] as! Tournament
+        var cellData: Tournament = fetchedResultsController.objectAtIndexPath(indexPath) as! Tournament
         cell.textLabel!.text = cellData.name
         cell.detailTextLabel!.text = cellData.game
-        
-        
-        
-        
         
         return cell
     }
@@ -104,14 +115,25 @@ class OpenTournamentTableViewController: UITableViewController, UITableViewDataS
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        if (segue.identifier == "openTournament") {
+        let destination = segue.destinationViewController as! CurrentTouramentViewController
+        let currentCell = sender as! UITableViewCell
+        let index = tableView.indexPathForCell(currentCell)
+        let currentTournament: Tournament = fetchedResultsController.objectAtIndexPath(index!) as! Tournament
+        destination.currentTournament = currentTournament
+        NSLog(currentTournament.description)
+        }
+        
+        
+        
+
     }
-    */
+    
 
 }

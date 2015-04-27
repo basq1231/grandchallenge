@@ -14,7 +14,7 @@ class NewTournamentViewController2: UIViewController, UIPickerViewDelegate, UIPi
     @IBOutlet weak var pickerGame: UIPickerView!
 
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    var gameOptions: [String] = ["Select Game","Baggo","Horeseshoes","Darts","Other"]
+    var gameOptions: [String] = ["Select Game","Baggo","Horseshoes","Darts","Other"]
     var selectedGame: String!
     var newTournament: Tournament!
     

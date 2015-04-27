@@ -18,7 +18,7 @@ class NewTournamentViewController4: UIViewController, UIPickerViewDelegate, UIPi
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var newTournament: Tournament!
     
-    var playerCountOptions: [Int] = [1,2,3,4,5,6,7,8]
+    var playerCountOptions: [Int] = [0,1,2,3,4,5,6,7,8]
     var selectedPlayerCount: Int!
     
     override func viewDidLoad() {
@@ -43,7 +43,8 @@ class NewTournamentViewController4: UIViewController, UIPickerViewDelegate, UIPi
     @IBAction func savePressed(sender: AnyObject) {
         println("Save pressed")
         newTournament.teamPlayerCount = selectedPlayerCount
-        newTournament.autoCreateTeams = true
+        var autoTeams: Bool =  switchAutoGenerateTeams.on ? true : false
+        newTournament.autoCreateTeams = autoTeams
         newTournament.createdDate = NSDate()
         
         println("Save was pressed. Attempting to save this tournament:")

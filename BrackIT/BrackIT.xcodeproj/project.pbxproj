@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0138BE1ADCB6D200906BCC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0138BD1ADCB6D200906BCC /* SettingsViewController.swift */; };
 		4C040A651AD027DE006FF5EC /* NewTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C040A641AD027DD006FF5EC /* NewTournamentViewController.swift */; };
+		4C1210191ADB3136002B8947 /* CurrentTouramentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1210181ADB3136002B8947 /* CurrentTouramentViewController.swift */; };
+		4C1210211ADB57D7002B8947 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1210201ADB57D7002B8947 /* Team.swift */; };
+		4C1210231ADB57D8002B8947 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1210221ADB57D8002B8947 /* Player.swift */; };
+		4C1210251ADB57D8002B8947 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1210241ADB57D8002B8947 /* Tournament.swift */; };
 		4C14B30E1AD38838006CCF5F /* OpenTournamentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C14B30D1AD38838006CCF5F /* OpenTournamentTableViewController.swift */; };
 		4C4870BA1AAD11C500B63AF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4870B91AAD11C500B63AF4 /* AppDelegate.swift */; };
 		4C4870BD1AAD11C500B63AF4 /* BrackIT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C4870BB1AAD11C500B63AF4 /* BrackIT.xcdatamodeld */; };
@@ -16,11 +21,12 @@
 		4C4870C41AAD11C500B63AF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4870C31AAD11C500B63AF4 /* Images.xcassets */; };
 		4C4870C71AAD11C500B63AF4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4870C51AAD11C500B63AF4 /* LaunchScreen.xib */; };
 		4C4870D31AAD11C500B63AF4 /* BrackITTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4870D21AAD11C500B63AF4 /* BrackITTests.swift */; };
-		4C4870DD1AAD192500B63AF4 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4870DC1AAD192500B63AF4 /* Tournament.swift */; };
 		4C5DD8AD1ACB80CC00361888 /* NewTournamentViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD8AC1ACB80CC00361888 /* NewTournamentViewController1.swift */; };
 		4C5DD8AF1ACB811000361888 /* NewTournamentViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD8AE1ACB811000361888 /* NewTournamentViewController2.swift */; };
 		4C5DD8B31ACB818800361888 /* NewTournamentViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD8B21ACB818800361888 /* NewTournamentViewController4.swift */; };
 		4C5DD8B51ACB855E00361888 /* NewTournamentViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD8B41ACB855E00361888 /* NewTournamentViewController3.swift */; };
+		4CFA51C41ADF441A00F63144 /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFA51C31ADF441A00F63144 /* PlayersTableViewController.swift */; };
+		4CFA51C61ADF4AC300F63144 /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFA51C51ADF4AC300F63144 /* AddPlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0138BD1ADCB6D200906BCC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
 		4C040A641AD027DD006FF5EC /* NewTournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTournamentViewController.swift; sourceTree = "<group>"; };
+		4C1210181ADB3136002B8947 /* CurrentTouramentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentTouramentViewController.swift; path = ../CurrentTouramentViewController.swift; sourceTree = "<group>"; };
+		4C1210201ADB57D7002B8947 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Team.swift; path = ../Team.swift; sourceTree = "<group>"; };
+		4C1210221ADB57D8002B8947 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
+		4C1210241ADB57D8002B8947 /* Tournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tournament.swift; path = ../Tournament.swift; sourceTree = "<group>"; };
 		4C14B30D1AD38838006CCF5F /* OpenTournamentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTournamentTableViewController.swift; sourceTree = "<group>"; };
 		4C4870B41AAD11C500B63AF4 /* BrackIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrackIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4870B81AAD11C500B63AF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,11 +58,12 @@
 		4C4870CC1AAD11C500B63AF4 /* BrackITTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrackITTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4870D11AAD11C500B63AF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C4870D21AAD11C500B63AF4 /* BrackITTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrackITTests.swift; sourceTree = "<group>"; };
-		4C4870DC1AAD192500B63AF4 /* Tournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		4C5DD8AC1ACB80CC00361888 /* NewTournamentViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTournamentViewController1.swift; sourceTree = "<group>"; };
 		4C5DD8AE1ACB811000361888 /* NewTournamentViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTournamentViewController2.swift; sourceTree = "<group>"; };
 		4C5DD8B21ACB818800361888 /* NewTournamentViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewTournamentViewController4.swift; path = ../NewTournamentViewController4.swift; sourceTree = "<group>"; };
 		4C5DD8B41ACB855E00361888 /* NewTournamentViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTournamentViewController3.swift; sourceTree = "<group>"; };
+		4CFA51C31ADF441A00F63144 /* PlayersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
+		4CFA51C51ADF4AC300F63144 /* AddPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +105,9 @@
 		4C4870B61AAD11C500B63AF4 /* BrackIT */ = {
 			isa = PBXGroup;
 			children = (
-				4C14B30D1AD38838006CCF5F /* OpenTournamentTableViewController.swift */,
+				4C040A641AD027DD006FF5EC /* NewTournamentViewController.swift */,
+				4C0138BD1ADCB6D200906BCC /* SettingsViewController.swift */,
+				4C1210181ADB3136002B8947 /* CurrentTouramentViewController.swift */,
 				4C5DD8AC1ACB80CC00361888 /* NewTournamentViewController1.swift */,
 				4C5DD8AE1ACB811000361888 /* NewTournamentViewController2.swift */,
 				4C5DD8B41ACB855E00361888 /* NewTournamentViewController3.swift */,
@@ -103,7 +117,9 @@
 				4C4870C01AAD11C500B63AF4 /* Main.storyboard */,
 				4C4870C31AAD11C500B63AF4 /* Images.xcassets */,
 				4C4870B71AAD11C500B63AF4 /* Supporting Files */,
-				4C040A641AD027DD006FF5EC /* NewTournamentViewController.swift */,
+				4CFA51C31ADF441A00F63144 /* PlayersTableViewController.swift */,
+				4C14B30D1AD38838006CCF5F /* OpenTournamentTableViewController.swift */,
+				4CFA51C51ADF4AC300F63144 /* AddPlayerViewController.swift */,
 			);
 			path = BrackIT;
 			sourceTree = "<group>";
@@ -138,8 +154,10 @@
 		4C4870DE1AAD19BD00B63AF4 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				4C1210241ADB57D8002B8947 /* Tournament.swift */,
+				4C1210221ADB57D8002B8947 /* Player.swift */,
+				4C1210201ADB57D7002B8947 /* Team.swift */,
 				4C4870BB1AAD11C500B63AF4 /* BrackIT.xcdatamodeld */,
-				4C4870DC1AAD192500B63AF4 /* Tournament.swift */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -244,16 +262,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C4870DD1AAD192500B63AF4 /* Tournament.swift in Sources */,
+				4C1210251ADB57D8002B8947 /* Tournament.swift in Sources */,
+				4C1210211ADB57D7002B8947 /* Team.swift in Sources */,
 				4C5DD8AF1ACB811000361888 /* NewTournamentViewController2.swift in Sources */,
+				4C1210231ADB57D8002B8947 /* Player.swift in Sources */,
 				4C5DD8B31ACB818800361888 /* NewTournamentViewController4.swift in Sources */,
 				4C4870BF1AAD11C500B63AF4 /* BrackItViewController.swift in Sources */,
 				4C4870BD1AAD11C500B63AF4 /* BrackIT.xcdatamodeld in Sources */,
 				4C040A651AD027DE006FF5EC /* NewTournamentViewController.swift in Sources */,
 				4C5DD8AD1ACB80CC00361888 /* NewTournamentViewController1.swift in Sources */,
+				4C0138BE1ADCB6D200906BCC /* SettingsViewController.swift in Sources */,
 				4C5DD8B51ACB855E00361888 /* NewTournamentViewController3.swift in Sources */,
 				4C14B30E1AD38838006CCF5F /* OpenTournamentTableViewController.swift in Sources */,
 				4C4870BA1AAD11C500B63AF4 /* AppDelegate.swift in Sources */,
+				4CFA51C61ADF4AC300F63144 /* AddPlayerViewController.swift in Sources */,
+				4C1210191ADB3136002B8947 /* CurrentTouramentViewController.swift in Sources */,
+				4CFA51C41ADF441A00F63144 /* PlayersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
