@@ -89,6 +89,13 @@ class PlayersTableViewController: UITableViewController, NSFetchedResultsControl
 
     @IBAction func brackItPressed(sender: AnyObject) {
         println("brackit pressed")
+        createRandomTeams()
+        createMatchups()
+        
+        
+    }
+    
+    func createRandomTeams() {
         var teams = [Team]()
         for index in 1...currentTournament.teamCount.integerValue {
             var newTeam: Team = NSEntityDescription.insertNewObjectForEntityForName("Team", inManagedObjectContext: managedObjectContext!) as! Team
@@ -123,7 +130,10 @@ class PlayersTableViewController: UITableViewController, NSFetchedResultsControl
         save()
         println("finished saving teams and players!!!!!!")
 
-        
+    }
+    
+    func createMatchups() {
+        var newGame: Game = NSEntityDescription.insertNewObjectForEntityForName("Team", inManagedObjectContext: managedObjectContext!) as! Game
     }
     
     func save() {

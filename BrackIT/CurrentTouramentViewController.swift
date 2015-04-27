@@ -65,6 +65,10 @@ class CurrentTouramentViewController: UIViewController {
             let destination = segue.destinationViewController as! PlayersTableViewController
             destination.currentTournament = self.currentTournament
         }
+        if (segue.identifier == "viewTeamsTable") {
+            let destination = segue.destinationViewController as! ViewTeamsTableViewController
+            destination.currentTournament = self.currentTournament
+        }
     }
     
 
