@@ -18,6 +18,7 @@ class PlayersTableViewController: UITableViewController, NSFetchedResultsControl
 
     var currentTournament: Tournament!
     var players : Array <AnyObject> = []
+    var teams = [Team]()
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var fetchedResultsController: NSFetchedResultsController = NSFetchedResultsController()
     
@@ -96,7 +97,7 @@ class PlayersTableViewController: UITableViewController, NSFetchedResultsControl
     }
     
     func createRandomTeams() {
-        var teams = [Team]()
+        //var teams = [Team]()
         for index in 1...currentTournament.teamCount.integerValue {
             var newTeam: Team = NSEntityDescription.insertNewObjectForEntityForName("Team", inManagedObjectContext: managedObjectContext!) as! Team
             newTeam.name = "Team \(index)"
@@ -133,11 +134,40 @@ class PlayersTableViewController: UITableViewController, NSFetchedResultsControl
     }
     
     func createMatchups() {
-        var newGame: Game = NSEntityDescription.insertNewObjectForEntityForName("Team", inManagedObjectContext: managedObjectContext!) as! Game
+        var games = [Game]()
+        var gamesInRound: Int = (currentTournament.teamCount.integerValue / 2)
+        var gamesCreatedForRound: Int = 0
+        var currentRound: Int = 1
+        
+        //The total number of games in the tournament will be one less than the number of teams
+        for index in 1...(currentTournament.teamCount.integerValue - 1) {
+            if (gamesCreatedForRound == gamesInRound) {
+                currentRound++
+                gamesCreatedForRound = 0
+                gamesInRound = gamesInRound/2   //Each round will have half as many games as previous round
+            }
+            
+            var newGame: Game = NSEntityDescription.insertNewObjectForEntityForName("Game", inManagedObjectContext: managedObjectContext!) as! Game
+            newGame.gameId = index
+            newGame.tournament = currentTournament
+            newGame.round = currentRound
+            //Set team matchups for the first round
+            if (currentRound == 1) {
+                    newGame.teamA = teams[index*2-2]
+                    newGame.teamB = teams[index*2-1]
+            }
+            
+            games.append(newGame)
+            save()
+            NSLog(newGame.description)
+            gamesCreatedForRound++
+
+        }
+
     }
     
     func save() {
-        println("Saving players and teams")
+        println("SAVING...")
         var error : NSError?
         if(managedObjectContext!.save(&error)) {
             println(error?.localizedDescription)
@@ -183,7 +213,6 @@ class PlayersTableViewController: UITableViewController, NSFetchedResultsControl
         else {
             cell.detailTextLabel?.text = "No team"
         }
-        NSLog(cellData.description)
         return cell
     }
 

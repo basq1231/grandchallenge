@@ -11,7 +11,7 @@ import CoreData
 
 @objc(Tournament)
 class Tournament: NSManagedObject {
-
+    
     @NSManaged var autoCreateTeams: NSNumber
     @NSManaged var createdDate: NSDate
     @NSManaged var game: String
@@ -20,6 +20,7 @@ class Tournament: NSManagedObject {
     @NSManaged var teamPlayerCount: NSNumber
     @NSManaged var teams: NSSet
     @NSManaged var tournamentPlayers: NSSet
+    @NSManaged var games: NSSet
     
     func playersRequired() ->  Int{
         

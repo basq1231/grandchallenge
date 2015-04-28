@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Game" syncable="YES">
+    <entity name="Game" representedClassName="Game" syncable="YES">
         <attribute name="gameId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="round" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="teamA" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="homeGames" inverseEntity="Team" syncable="YES"/>

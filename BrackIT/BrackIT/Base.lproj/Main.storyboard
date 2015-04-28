@@ -248,6 +248,9 @@
                                 <state key="normal" title="Bracket">
                                     <color key="titleColor" red="0.24313725489999999" green="0.4823529412" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Hbm-YA-BRX" kind="show" identifier="openBracket" id="zBW-1i-rsy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIz-mG-LV9">
                                 <rect key="frame" x="57" y="257" width="207" height="49"/>
@@ -497,6 +500,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJJ-NG-aeC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2183" y="2446"/>
+        </scene>
+        <!--Games Table View Controller-->
+        <scene sceneID="XN4-gf-PaF">
+            <objects>
+                <tableViewController id="Hbm-YA-BRX" customClass="GamesTableViewController" customModule="BrackIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vLk-R8-Ent">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gameCell" textLabel="Mc1-3v-mdW" detailTextLabel="t85-nY-ic6" style="IBUITableViewCellStyleSubtitle" id="mUs-wb-Nj3">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mUs-wb-Nj3" id="MLV-er-t5j">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mc1-3v-mdW">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t85-nY-ic6">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hbm-YA-BRX" id="MgP-qT-yOF"/>
+                            <outlet property="delegate" destination="Hbm-YA-BRX" id="DFB-Hu-VeT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hUQ-Xw-ZZQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zob-c0-SoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2183" y="3079"/>
         </scene>
         <!--Title-->
         <scene sceneID="Zbe-Rl-Meg">
@@ -805,11 +849,31 @@
             </objects>
             <point key="canvasLocation" x="1813" y="2446"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vrc-Ly-cbL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B1y-q8-ucg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="anM-UB-jYh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hbm-YA-BRX" kind="relationship" relationship="rootViewController" id="nkB-af-xF6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O66-P2-CgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813" y="3079"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="XUp-6X-7Fi"/>
-        <segue reference="MZM-i1-ZMN"/>
         <segue reference="jAC-6M-wc6"/>
+        <segue reference="zBW-1i-rsy"/>
+        <segue reference="MZM-i1-ZMN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>

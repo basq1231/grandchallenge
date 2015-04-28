@@ -69,6 +69,11 @@ class CurrentTouramentViewController: UIViewController {
             let destination = segue.destinationViewController as! ViewTeamsTableViewController
             destination.currentTournament = self.currentTournament
         }
+        if (segue.identifier == "openBracket") {
+            let destination = segue.destinationViewController as! GamesTableViewController
+            destination.currentTournament = self.currentTournament
+        }
+        
     }
     
 
