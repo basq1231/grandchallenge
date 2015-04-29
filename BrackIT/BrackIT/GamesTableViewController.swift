@@ -12,6 +12,7 @@ import CoreData
 
 class GamesTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
+
     var currentTournament: Tournament!
     //var teams : Array <AnyObject> = []
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
@@ -88,11 +89,12 @@ class GamesTableViewController: UITableViewController, NSFetchedResultsControlle
     
     //Populate cell in table
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("gameCell") as! UITableViewCell
+        let cell: gameTableViewCell = tableView.dequeueReusableCellWithIdentifier("gameCell") as! gameTableViewCell
         var nameTeamA: String = "TBD"
         var nameTeamB: String = "TBD"
         
         var cellData: Game = fetchedResultsController.objectAtIndexPath(indexPath) as! Game
+        cell.currentGame = cellData //Send the current game to the cell
         if let teamA = cellData.teamA as Team? {
             nameTeamA = teamA.name
         }
@@ -100,12 +102,16 @@ class GamesTableViewController: UITableViewController, NSFetchedResultsControlle
         if let teamB = cellData.teamB as Team? {
             nameTeamB = teamB.name
         }
+        
+        if let winner = cellData.winner as Team? {
+            cell.setWinningTeam(winner)
+        }
 
         
-        let cellTitle: String = nameTeamA + " vs. " + nameTeamB
+        //let cellTitle: String = nameTeamA + " vs. " + nameTeamB
         
-        cell.textLabel!.text = cellTitle
-        cell.detailTextLabel!.text = cellData.round.stringValue
+        cell.button_teamA.setTitle(nameTeamA, forState: UIControlState.Normal)
+        cell.button_teamB.setTitle(nameTeamB, forState: UIControlState.Normal)
         
         return cell
     }

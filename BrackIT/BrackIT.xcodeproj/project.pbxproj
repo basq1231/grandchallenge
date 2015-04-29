@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C0138BE1ADCB6D200906BCC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0138BD1ADCB6D200906BCC /* SettingsViewController.swift */; };
 		4C040A651AD027DE006FF5EC /* NewTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C040A641AD027DD006FF5EC /* NewTournamentViewController.swift */; };
+		4C0893D41AEF236E00A48C3D /* gameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0893D31AEF236E00A48C3D /* gameTableViewCell.swift */; };
 		4C1210191ADB3136002B8947 /* CurrentTouramentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1210181ADB3136002B8947 /* CurrentTouramentViewController.swift */; };
 		4C1210231ADB57D8002B8947 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1210221ADB57D8002B8947 /* Player.swift */; };
 		4C1210251ADB57D8002B8947 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1210241ADB57D8002B8947 /* Tournament.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		4C0138BD1ADCB6D200906BCC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
 		4C040A641AD027DD006FF5EC /* NewTournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTournamentViewController.swift; sourceTree = "<group>"; };
+		4C0893D31AEF236E00A48C3D /* gameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gameTableViewCell.swift; sourceTree = "<group>"; };
 		4C1210181ADB3136002B8947 /* CurrentTouramentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentTouramentViewController.swift; path = ../CurrentTouramentViewController.swift; sourceTree = "<group>"; };
 		4C1210221ADB57D8002B8947 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
 		4C1210241ADB57D8002B8947 /* Tournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tournament.swift; path = ../Tournament.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				4CFA51C51ADF4AC300F63144 /* AddPlayerViewController.swift */,
 				4CA30C501AEDBBC600FBB2EB /* ViewTeamsTableViewController.swift */,
 				4CA30C5E1AEDE1BD00FBB2EB /* GamesTableViewController.swift */,
+				4C0893D31AEF236E00A48C3D /* gameTableViewCell.swift */,
 			);
 			path = BrackIT;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				4CA30C5D1AEDDAED00FBB2EB /* Team.swift in Sources */,
 				4CA30C571AEDD91400FBB2EB /* Game.swift in Sources */,
 				4C1210251ADB57D8002B8947 /* Tournament.swift in Sources */,
+				4C0893D41AEF236E00A48C3D /* gameTableViewCell.swift in Sources */,
 				4C5DD8AF1ACB811000361888 /* NewTournamentViewController2.swift in Sources */,
 				4CA30C5F1AEDE1BD00FBB2EB /* GamesTableViewController.swift in Sources */,
 				4C1210231ADB57D8002B8947 /* Player.swift in Sources */,
