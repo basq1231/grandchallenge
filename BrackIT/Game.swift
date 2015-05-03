@@ -19,6 +19,19 @@ class Game: NSManagedObject {
     @NSManaged var teamB: Team?
     @NSManaged var winner: Team?
     
+    
+    func isChampionshipGame() -> Bool {
+        var isChampionship: Bool
+        //A tournament will have a total number of games equal to the number of teams minus 1
+        if (self.gameId.integerValue == (tournament.teamCount.integerValue - 1)) {
+            isChampionship = true
+        }
+        else {
+            isChampionship = false
+        }
+        return isChampionship
+    }
+    
     //Returns the ID of the game that the winner of the current game would play in next
     func nextGameId() ->Int {
         var nextGameId: Int
@@ -31,6 +44,32 @@ class Game: NSManagedObject {
             nextGameId = (currentGameId / 2) + (self.tournament.teamCount.integerValue/2)
         }
         return nextGameId
+    }
+    
+    func isMatchupSeg() -> Bool {
+        var matchupSet: Bool = false
+        if let firstTeam: Team = self.teamA as Team? {
+            if let secondTeam: Team = self.teamB {
+                matchupSet = true
+            }
+        }
+        
+        return matchupSet
+    }
+    
+    func isOver() -> Bool {
+        var gameOver: Bool
+        
+        if let thisWinner: Team = self.winner as Team? {
+            gameOver = true
+        }
+        else {
+            gameOver = false
+        }
+        if self.gameId.integerValue == 7 {
+            println("Game 7 is over: \(gameOver)")
+        }
+        return gameOver
         
     }
 

@@ -40,7 +40,7 @@ class GamesTableViewController: UITableViewController, NSFetchedResultsControlle
         fetchedResultsController = getFetchedResultsController()
         fetchedResultsController.delegate = self
         fetchedResultsController.performFetch(nil)
-        println("total games created: /(currentTournament.games.count)")
+
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -65,7 +65,6 @@ class GamesTableViewController: UITableViewController, NSFetchedResultsControlle
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
         let sectionCount = fetchedResultsController.sections?.count
-        println("Section count \(sectionCount)")
         return sectionCount!
     }
     
@@ -73,7 +72,7 @@ class GamesTableViewController: UITableViewController, NSFetchedResultsControlle
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if let sections = fetchedResultsController.sections {
             let currentSection = sections[section] as! NSFetchedResultsSectionInfo
-            return currentSection.name
+            return "ROUND \(currentSection.name!)"
         }
         return nil
     }
@@ -95,16 +94,19 @@ class GamesTableViewController: UITableViewController, NSFetchedResultsControlle
         
         var cellData: Game = fetchedResultsController.objectAtIndexPath(indexPath) as! Game
         cell.currentGame = cellData //Send the current game to the cell
+        NSLog(cellData.description)
         if let teamA = cellData.teamA as Team? {
             nameTeamA = teamA.name
         }
+        else {println("ERROR could not set team a name")}
 
         if let teamB = cellData.teamB as Team? {
             nameTeamB = teamB.name
         }
+        else {println("ERROR could not set team B name")}
         
-        if let winner = cellData.winner as Team? {
-            cell.setWinningTeam(winner)
+        if cellData.isOver() {
+            cell.initializeLabels()
         }
 
         

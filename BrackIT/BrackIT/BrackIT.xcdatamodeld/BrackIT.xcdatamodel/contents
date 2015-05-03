@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7541.6" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Game" representedClassName="Game" syncable="YES">
         <attribute name="gameId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="round" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -16,7 +16,7 @@
     </entity>
     <entity name="Team" representedClassName="Team" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="awayGames" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="teamB" inverseEntity="Game" syncable="YES"/>
+        <relationship name="awayGames" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Game" inverseName="teamB" inverseEntity="Game" syncable="YES"/>
         <relationship name="homeGames" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Game" inverseName="teamA" inverseEntity="Game" syncable="YES"/>
         <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="playersTeam" inverseEntity="Player" syncable="YES"/>
         <relationship name="tournament" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tournament" inverseName="teams" inverseEntity="Tournament" syncable="YES"/>
@@ -34,9 +34,9 @@
         <relationship name="tournamentPlayers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="tournament" inverseEntity="Player" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Game" positionX="-45" positionY="63" width="128" height="135"/>
         <element name="Player" positionX="-54" positionY="36" width="128" height="103"/>
         <element name="Team" positionX="-54" positionY="36" width="128" height="135"/>
         <element name="Tournament" positionX="-54" positionY="-9" width="128" height="180"/>
-        <element name="Game" positionX="-45" positionY="63" width="128" height="135"/>
     </elements>
 </model>

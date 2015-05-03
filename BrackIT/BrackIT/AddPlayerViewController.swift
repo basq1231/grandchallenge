@@ -29,6 +29,16 @@ class AddPlayerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    //Force keyboard to close when user touches out of it
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
+    //Force keyboard to close when user presses done
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField_name.resignFirstResponder()
+        return true
+    }
  
     
     @IBAction func savePressed(sender: AnyObject) {
@@ -40,7 +50,7 @@ class AddPlayerViewController: UIViewController {
         save()
         if (sender as! NSObject == button_saveAddAnother) {
             textField_name.text = nil
-            textField_number.text = nil
+            //textField_number.text = nil
             removeSaveAddAnotherIfNecessary()
         }
         else {

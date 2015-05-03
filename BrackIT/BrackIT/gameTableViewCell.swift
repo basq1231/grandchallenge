@@ -44,82 +44,133 @@ class gameTableViewCell: UITableViewCell, NSFetchedResultsControllerDelegate {
     }
  
     
-    @IBAction func teamASelected(sender: AnyObject) {
-        if let currentWinner = currentGame.winner as Team? {
-            //A winner was previously selected
-            if (button_teamA.titleLabel!.text == currentWinner.name) {
-                //deselect current winner. reset winner to nil
-                currentGame.winner = nil
-                button_teamA.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+    @IBAction func teamASelected(sender: UIButton) {
+        if currentGame.isMatchupSeg() {
+            
+        if currentGame.isChampionshipGame() {
+            //The champion can always be updated since it's the last game
+            if currentGame.isOver()
+            {
+                //Winner is being de-selected
+                if currentGame.winner!.name == sender.titleLabel?.text {
+                    unformatTeams()
+                    currentGame.winner = nil
+                }
+                //Champion is being reset
+                else {
+                    formatWinner(sender)
+                    setWinningTeam(sender, nextGame: nil)
+                }
             }
-                //Winner is being changed
+            //Champion is being set for first time
             else {
-                //select team A, deselect team B
-                currentGame.winner = currentGame.teamA
-                println("team A should become winner and team b should deselect")
-                button_teamA.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
-                button_teamB.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+                formatWinner(sender)
+                setWinningTeam(sender, nextGame: nil)
             }
         }
-            //
+            //Not the championship game
         else {
-            println("team a was selected as orig winner")
-            currentGame.winner = currentGame.teamA
-            button_teamA.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
-        }
-        save()
-        advanceWinner(currentGame.teamA!)
-    }
-    
-    
-    @IBAction func teamBSelected(sender: AnyObject) {
-        if let currentWinner = currentGame.winner as Team? {
-            if (button_teamB.titleLabel?.text == currentWinner.name) {
-                //deselect current winner. reset winner to nil
-                println("team a was deselected")
-                currentGame.winner = nil
-                button_teamB.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-            }
-            else {
-                //select team B, deselect team A
-                currentGame.winner = currentGame.teamB
-                println("team B should become winner and team A should deselect")
-                button_teamB.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
-                button_teamA.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-            }
-        }
-        else {
-            println("team B was selected as orig winner")
-            currentGame.winner = currentGame.teamB
-            button_teamB.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
-        }
-        save()
-        advanceWinner(currentGame.teamB!)
+            let nextGame: Game = getNextGame()
+            
+            if (nextGame.isOver() == false) {
+                if (currentGame.isOver()) {
+                    //Winner is being de-selected
+                    if currentGame.winner!.name == sender.titleLabel?.text {
+                        undoWinner(nextGame)
+                    }
+                    //winner is being reset
+                    else {
+                        formatWinner(sender)
+                        setWinningTeam(sender, nextGame: nextGame)
+                    }
+                }
+                else {
+                    //Winner is being set for first time
+                    formatWinner(sender)
+                    setWinningTeam(sender, nextGame: nextGame)
 
+                }
+            }
+            else {
+                //Do nothing. If the next game was played, you can't change history
+            }
+        }
+        
+        save()//move this. this is saving when nothing should save
+        }
     }
     
-    func getNextGame() {
+    func undoWinner(nextGame: Game) {
+        unformatTeams()
+        currentGame.winner = nil
+        
+        if (currentGame.gameId.integerValue % 2 == 0) {
+            nextGame.teamB = nil
+            println("about to nil out teamB")
+            println("Game id:  \(nextGame.gameId)")
+        }
+        else {
+            nextGame.teamA = nil
+        }
+        save()//new
+    }
+    
+    
+    func formatWinner(winnerButton: UIButton) {
+        
+        unformatTeams()
+        
+        winnerButton.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
         
     }
     
-    func advanceWinner(winner: Team) {
-        println("in advance winner method")
+    func initializeLabels() {
+        if currentGame.isOver() {
+            if currentGame.winner == currentGame.teamA {
+                button_teamA.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+
+            }
+            else {
+                button_teamB.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+
+            }
+        }
+    }
+    
+    //Rest team labels to black text
+    func unformatTeams() {
+        button_teamA.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        button_teamB.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+    }
+    
+    
+
+    
+    func getNextGame() -> Game {
         var nextGames = [Game]()
+        var nextGame: Game
         nextGames = managedObjectContext?.executeFetchRequest(nextGameFetchRequest(), error: nil) as! [Game]
-        if (nextGames.count == 1) {
-            println("advance winner: returned one row!")
-            var nextGame: Game = nextGames[0]
+        
+        //TODO: Add more checks on the returned results
+            nextGame = nextGames[0]
+            return nextGame
+
+        
+        
+    }
+    
+    func advanceWinner(winner: Team, nextGame: Game) {
+            println("advancing the winner, \(winner.name) to the next round, \(nextGame.gameId)")
+            //If the current game is even-numbered, the winner will be team B in next round; otherwise they will be team A
             if (currentGame.gameId.integerValue % 2 == 0) {
+                println("setting teamB as winner for game id: \(nextGame.gameId)")
+                
                 nextGame.teamB = winner
             }
             else {
                 nextGame.teamA = winner
             }
-            save()
-        }
-        else {
-            println("fetch did not return one row :(")
-        }
+            save()//new
     }
     
     func save() {
@@ -128,16 +179,24 @@ class gameTableViewCell: UITableViewCell, NSFetchedResultsControllerDelegate {
         if(managedObjectContext!.save(&error)) {
             println(error?.localizedDescription)
         }
-        NSLog(currentGame.description)
+        //NSLog(currentGame.description)
     }
     
-    func setWinningTeam(winningTeam: Team) {
-        if winningTeam == currentGame.teamA {
-            button_teamA.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+    //Sets the winner of the current team by the button pressed
+    func setWinningTeam(winningTeam: UIButton, nextGame: Game?) {
+        if winningTeam == button_teamA {
+            currentGame.winner = currentGame.teamA
+            if currentGame.isChampionshipGame() == false {
+                advanceWinner(currentGame.teamA!, nextGame: nextGame!)
+            }
         }
-        else if (winningTeam == currentGame.teamB) {
-            button_teamB.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+        else {
+            currentGame.winner = currentGame.teamB
+            if currentGame.isChampionshipGame() == false {
+                advanceWinner(currentGame.teamB!, nextGame: nextGame!)
+            }
         }
+        save() //new
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

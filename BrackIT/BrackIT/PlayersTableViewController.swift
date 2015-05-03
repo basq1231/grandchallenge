@@ -126,6 +126,13 @@ class PlayersTableViewController: UITableViewController, NSFetchedResultsControl
                 OrderedPlayers.first?.playersTeam = team
                 OrderedPlayers.removeAtIndex(0)
             }
+            //If there are two players per team, rename the team
+            if currentTournament.teamPlayerCount.integerValue == 2 {
+                var playerArray = [Player]()
+                playerArray = team.players.allObjects as! [Player]
+                team.name = ("\(playerArray[0].name) & \(playerArray[1].name)")
+                
+            }
         }
         println("about to save teams and players")
         save()
