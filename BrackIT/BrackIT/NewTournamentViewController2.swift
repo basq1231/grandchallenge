@@ -20,8 +20,6 @@ class NewTournamentViewController2: UIViewController, UIPickerViewDelegate, UIPi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("Current tournament status")
-        NSLog(newTournament.description)
         self.title = newTournament.name
         
         pickerGame.delegate = self

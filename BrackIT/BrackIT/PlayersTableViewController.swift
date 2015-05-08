@@ -89,10 +89,8 @@ class PlayersTableViewController: UITableViewController, NSFetchedResultsControl
     }
 
     @IBAction func brackItPressed(sender: AnyObject) {
-        println("brackit pressed")
         createRandomTeams()
         createMatchups()
-        
         
     }
     
@@ -174,7 +172,6 @@ class PlayersTableViewController: UITableViewController, NSFetchedResultsControl
     }
     
     func save() {
-        println("SAVING...")
         var error : NSError?
         if(managedObjectContext!.save(&error)) {
             println(error?.localizedDescription)

@@ -150,27 +150,19 @@ class gameTableViewCell: UITableViewCell, NSFetchedResultsControllerDelegate {
         var nextGames = [Game]()
         var nextGame: Game
         nextGames = managedObjectContext?.executeFetchRequest(nextGameFetchRequest(), error: nil) as! [Game]
-        
-        //TODO: Add more checks on the returned results
-            nextGame = nextGames[0]
-            return nextGame
-
-        
-        
+        nextGame = nextGames[0]
+        return nextGame
     }
     
     func advanceWinner(winner: Team, nextGame: Game) {
-            println("advancing the winner, \(winner.name) to the next round, \(nextGame.gameId)")
             //If the current game is even-numbered, the winner will be team B in next round; otherwise they will be team A
             if (currentGame.gameId.integerValue % 2 == 0) {
-                println("setting teamB as winner for game id: \(nextGame.gameId)")
-                
                 nextGame.teamB = winner
             }
             else {
                 nextGame.teamA = winner
             }
-            save()//new
+            save()
     }
     
     func save() {
@@ -196,7 +188,7 @@ class gameTableViewCell: UITableViewCell, NSFetchedResultsControllerDelegate {
                 advanceWinner(currentGame.teamB!, nextGame: nextGame!)
             }
         }
-        save() //new
+        save()
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

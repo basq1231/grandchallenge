@@ -29,12 +29,9 @@ class BrackItViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let fetchRequest = NSFetchRequest(entityName: "Tournament")
-        println("Count:")
-        println(managedObjectContext!.executeFetchRequest(fetchRequest, error: nil)?.count.description)
+
         tournamentsSaved = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil)?.count.description
         labelTournamentCount.text = tournamentsSaved
-        
-        //self.navigationController?.setNavigationBarHidden(true, animated: false)
         
     }
     
@@ -55,9 +52,6 @@ class BrackItViewController: UIViewController {
     @IBAction func unwindToMainMenuByCancel(segue: UIStoryboardSegue)
     {
         println("TOURNAMENT CANCELLED")
-        
-        
-        //self.performSegueWithIdentifier("goToNewTournamentOne", sender: self)
     }
 }
 

@@ -12,7 +12,6 @@ import CoreData
 class ViewTeamsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var currentTournament: Tournament!
-    //var teams : Array <AnyObject> = []
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var fetchedResultsController: NSFetchedResultsController = NSFetchedResultsController()
     

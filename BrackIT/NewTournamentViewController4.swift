@@ -23,10 +23,6 @@ class NewTournamentViewController4: UIViewController, UIPickerViewDelegate, UIPi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("I'm in view 4")
-        println("Current tournament status")
-        NSLog(newTournament.description)
-
 
         self.title = newTournament.name
         
@@ -46,14 +42,10 @@ class NewTournamentViewController4: UIViewController, UIPickerViewDelegate, UIPi
         var autoTeams: Bool =  switchAutoGenerateTeams.on ? true : false
         newTournament.autoCreateTeams = autoTeams
         newTournament.createdDate = NSDate()
-        
-        println("Save was pressed. Attempting to save this tournament:")
-        NSLog(newTournament.description)
-        //save()
-        
-        
+
     }
     
+    //Retrieve data for player count picker
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         if (row == 0){
             return "Select Player Count"
@@ -84,28 +76,20 @@ class NewTournamentViewController4: UIViewController, UIPickerViewDelegate, UIPi
     
 
     func save() {
-        println("Saving tournament")
         var error : NSError?
         if(managedObjectContext!.save(&error)) {
             println(error?.localizedDescription)
         }
     }
     
-    
-    
-    
-
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //change this to make sure it due to save
-        println("Save pressed")
+        //change this to make sure in save segue
         newTournament.teamPlayerCount = selectedPlayerCount
         newTournament.autoCreateTeams = true
         newTournament.createdDate = NSDate()
         
-        println("Save was pressed. Attempting to save this tournament:")
-        NSLog(newTournament.description)
         save()
         
         

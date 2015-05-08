@@ -33,10 +33,6 @@ class SettingsViewController: UIViewController {
         textField_teamCt.text = toString(currentTournament.teamCount)
         var autoGenerateTeams: String = currentTournament.autoCreateTeams == true ? "Yes" : "No"
         textField_autoGenerate.text = autoGenerateTeams
-        
-        
-        
-        
 
         // Do any additional setup after loading the view.
     }

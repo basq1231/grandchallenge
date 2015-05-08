@@ -30,7 +30,7 @@ class NewTournamentViewController3: UIViewController, UIPickerViewDelegate, UIPi
 
     }
 
-    
+    //Retrieve data for the Team Count picker
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         if (row == 0){
         return "Select Team Count"

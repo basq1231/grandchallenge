@@ -59,7 +59,6 @@ class AddPlayerViewController: UIViewController {
     }
     
     func save() {
-        println("Saving player")
         var error : NSError?
         if(managedObjectContext!.save(&error)) {
             println(error?.localizedDescription)

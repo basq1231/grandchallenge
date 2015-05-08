@@ -32,9 +32,7 @@ class CurrentTouramentViewController: UIViewController {
     }
     
     func displayTeamOrPlayersButton() {
-        println("Team count \(currentTournament.teams.count)")
-        println("Player count \(currentTournament.tournamentPlayers.count)")
-        //Show "Add Players" only if there
+        //Show add player/team button depending on whether or not teams have been created
         if currentTournament.teams.count == 0 {
             button_viewTeams.hidden = true
             button_addPlayers.hidden = false
